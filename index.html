@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slick.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+				
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="title_slider">
+        <h1 >Conoce a nuestros Practitioners</h1>
+    </div>
+    <div class="practitioners">
+        <div class="practitioner">
+            <div class="card">
+                <div class="card-content">
+                    <div class="image" onclick="openModal('0')">
+                        <img src="images/person1.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="description">
+                <div class="name">
+                    Heidi Uchiyama <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div class="user_description">
+                    <p>Founder en Beta Lab</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="practitioner">
+            <div class="card">
+                <div class="card-content">
+                    <div class="image" onclick="openModal('1')">
+                        <img src="images/person2.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="description">
+                <div class="name">
+                    Patricia Beltrán<i class="fa-brands fa-linkedin"></i>
+
+                </div>
+                <div class="user_description">
+                    <p>Design y Experience Leaden Tunki</p>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="practitioner">
+            <div class="card">
+                <div class="card-content">
+                    <div class="image" onclick="openModal('2')">
+                        <img src="images/person3.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="description">
+                <div class="name">
+                    Maria Gonzales <i class="fa-brands fa-linkedin"></i>
+
+                </div>
+                <div class="user_description">
+                    <p>Data Scientist en BCP</p>
+
+                </div>
+
+            </div>
+        </div>
+
+       
+    </div>
+    <div class="left_arr">
+        <i class='fa-solid fa-angle-left left-arrow'></i>
+    </div>
+    <div class="right_arr">
+        <i class='fa-solid fa-angle-right rigth-arrow'></i>
+    </div>
+    
+    
+    
+</div>
+
+<div class="modal-bg">
+    <div class="modal">
+        <div class="image">
+            <img id="user_avatar" src="images/person1.png" alt="">
+        </div>
+        <div class="description">
+            <div class="title">
+                <span id="user_title">PRACTITIONES</span>
+                
+            </div>
+            <div class="name">
+                <span id="user_name">HEIDI UCHIYAMA</span>
+            </div>
+            <div class="role">
+                <p id="user_description">Founder en Betalab</p>
+                
+            </div>
+            <div class="aditional-info">
+                <div class="country">
+                    <span><i class="fa-solid fa-location-dot"></i> <strong id="user_location"> Lima,Perú</strong></span>
+                </div>
+                <div class="carrer">
+                    <i class="fa-solid fa-backpack"> <strong id="user_career">UX - Service design</strong> </i>
+                </div>
+            </div>
+        </div>
+        <div class="modal-close" onclick="openModal('-1')">x</div>
+
+
+    </div>
+</div>
+                  
+
+    
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="slick.min.js"></script>
+<script>
+    // carrusel with slick library
+    $('.practitioners').slick({
+    centerMode: true,
+    centerPadding: '150px',
+    slidesToShow: 2,
+    dots:false,
+    prevArrow:$(".left-arrow"),
+    nextArrow:$(".rigth-arrow"),
+    responsive: [
+    {
+      breakpoint: 2000,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 1041,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '10px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '10px',
+        slidesToShow: 1
+      }
+    }
+  ]
+
+    });
+
+    // information about our users
+    let users=[
+    {   id:0,
+        avatar:"images/person1.png",
+        title:"PRACTITIONER",
+        name:"Heidi Uchiyama",
+        description: "Founder en BetaLab",
+        location:"Lima, Perú",
+        career: "UX -Service Design"
+    },
+    {   id:1,
+        avatar:"images/person2.png",
+        title:"PRACTITIONER",
+        name:"Patricia Beltrán",
+        description: "Design y Experience Leaden Tunki",
+        location:"Lima, Perú",
+        career: "UX Designer"
+    },
+    {   id:2,
+        avatar:"images/person3.png",
+        title:"PRACTITIONER",
+        name:"Maria Gonzales",
+        description: "Data Scientist en BCP",
+        location:"Lima, Perú",
+        career: "Machine Learning Engineer"
+    }
+
+    ]
+    
+    // fill a carrusel with Users
+
+
+
+
+    function openModal(id){
+        // open our popup
+        var modalBg=document.querySelector(".modal-bg")
+        modalBg.classList.add("bg-active")
+        let user={}
+        users.forEach(
+            function(item, index, arr) {
+                if (users[index].id==id){
+                    user=users[index]
+                }
+        });
+        if (id!=="-1"){
+            document.getElementById("user_avatar").src=user.avatar
+            console.log(user.title)
+            document.getElementById("user_title").innerHTML=user.title
+            document.getElementById("user_name").innerHTML=user.name
+            document.getElementById("user_description").innerHTML=user.description
+            document.getElementById("user_location").innerHTML=user.location
+            document.getElementById("user_carrer").innerHTML=user.carrer
+        }
+        
+
+
+
+
+        // code for we modal popup
+        var modalBg=document.querySelector(".modal-bg")
+        var modalClose=document.querySelector(".modal-close")
+
+        if (id=="-1"){
+            modalBg.classList.remove("bg-active")
+      
+
+        }
+
+        
+    }
+
+   
+    
+
+    
+
+
+
+
+    
+
+
+</script>
+</html>
